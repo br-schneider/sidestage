@@ -1,0 +1,19 @@
+README.md
+  s_7dd7a2024305ea::t_3cbb1a1a66741b 52-61
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.2",
+  "base_commit_sha": "b4a838623e05f9298a5405297bd4f3888259d4fe",
+  "prompts": {},
+  "sessions": {
+    "s_7dd7a2024305ea": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "8f860ee5-ec28-4d74-84c5-21f586b7e81e",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "Brett Schneider <brett.c.schneider@gmail.com>"
+    }
+  }
+}
