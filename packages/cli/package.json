@@ -1,6 +1,6 @@
 {
   "name": "sidestage",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "type": "module",
   "description": "A safe cockpit for non-engineers to change a real codebase and hand it to engineering.",
   "keywords": [

@@ -81,14 +81,17 @@ export interface GeneratedLauncher {
   script: string;
 }
 
+// The handed-out, blank-laptop launcher is named "…Setup" so it never collides
+// with a lightweight `Sidestage.command` an engineer may commit into the repo
+// for machines that already have the checkout.
 export function launcherFor(platform: LauncherPlatform, opts: LauncherOptions): GeneratedLauncher {
   switch (platform) {
     case "mac":
-      return { filename: "Sidestage.command", script: macLauncherScript(opts) };
+      return { filename: "Sidestage Setup.command", script: macLauncherScript(opts) };
     case "windows":
-      return { filename: "Sidestage.bat", script: windowsLauncherScript(opts) };
+      return { filename: "Sidestage Setup.bat", script: windowsLauncherScript(opts) };
     case "linux":
-      return { filename: "sidestage.sh", script: posixLauncherScript(opts) };
+      return { filename: "sidestage-setup.sh", script: posixLauncherScript(opts) };
   }
 }
 

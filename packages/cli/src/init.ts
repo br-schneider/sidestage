@@ -5,6 +5,7 @@ import {
   findConfigPath,
   httpsRemote,
   launcherFor,
+  loadConfig,
   type PackageManager,
   repoNameFromUrl,
   system,
@@ -32,8 +33,18 @@ export async function runInit(ui: UI): Promise<void> {
   const detected = await detectDefaults(cwd);
 
   const existing = findConfigPath(cwd);
+  // The launcher embeds a config snapshot so a blank laptop can bootstrap
+  // (toolchain, auth, clone, install) before the repo exists. Prefer the
+  // committed config so the snapshot faithfully reflects this repo — and after
+  // cloning, Sidestage re-reads the repo's config as the source of truth.
+  let launcherConfig: Record<string, unknown> = detected.configObject;
   if (existing) {
-    ui.info(`Using the existing config at ${existing}.`);
+    try {
+      launcherConfig = (await loadConfig(existing)).config as unknown as Record<string, unknown>;
+      ui.info(`Using the existing config at ${existing}.`);
+    } catch {
+      ui.warn(`Could not read ${existing}; the launcher will use detected defaults.`);
+    }
   } else {
     const configPath = join(cwd, "sidestage.config.ts");
     writeFileSync(configPath, configTemplate(detected));
@@ -54,7 +65,7 @@ export async function runInit(ui: UI): Promise<void> {
   const target = platform === "unknown" ? "linux" : platform;
   const { filename, script } = launcherFor(target, {
     appName: `Sidestage — ${detected.repoName}`,
-    configJson: JSON.stringify(detected.configObject, null, 2),
+    configJson: JSON.stringify(launcherConfig, null, 2),
   });
   const launcherPath = join(cwd, filename);
   writeLauncher(launcherPath, script);

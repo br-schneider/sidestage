@@ -67,7 +67,8 @@ async function resolveContext(
         ui.error(result.error);
         return null;
       }
-      return { config, repoDir: result.value.repoDir };
+      // Use the repo's committed config (read post-clone), not the embedded one.
+      return { config: result.value.config, repoDir: result.value.repoDir };
     }
 
     const found = findConfigPath(process.cwd());
@@ -91,7 +92,7 @@ async function resolveContext(
       ui.error(result.error);
       return null;
     }
-    return { config, repoDir: result.value.repoDir };
+    return { config: result.value.config, repoDir: result.value.repoDir };
   } catch (error) {
     ui.error(error instanceof Error ? error.message : String(error));
     return null;

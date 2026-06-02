@@ -3,7 +3,7 @@ import { readFile } from "node:fs/promises";
 import { homedir } from "node:os";
 import { join } from "node:path";
 
-import type { SidestageConfig } from "@sidestage/config";
+import { loadConfig, type SidestageConfig } from "@sidestage/config";
 
 import { getGitHostAdapter } from "./adapters/index.js";
 import { clone, ensureHttpsRemote, isGitRepo } from "./git.js";
@@ -27,6 +27,24 @@ function expandHome(path: string): string {
 
 export interface OnboardingResult {
   repoDir: string;
+  // The config the session should use. After a clone this is the repo's
+  // committed sidestage.config.* (the source of truth); the bootstrap config
+  // passed to runOnboarding only needs to carry enough to clone + install.
+  config: SidestageConfig;
+}
+
+// After cloning, the repo's committed sidestage.config.* is authoritative for
+// the session. Fall back to the bootstrap config only if the clone has no
+// loadable config (e.g. it predates adoption, or is on an unsupported runtime).
+export async function resolveClonedConfig(
+  repoDir: string,
+  bootstrap: SidestageConfig,
+): Promise<SidestageConfig> {
+  try {
+    return (await loadConfig(repoDir)).config;
+  } catch {
+    return bootstrap;
+  }
 }
 
 // The fresh-laptop flow. Every step is idempotent so a re-run resumes rather
@@ -96,11 +114,20 @@ export async function runOnboarding(
     if (!res.ok) return err("Could not install the project's dependencies.");
   }
 
+  // The committed config in the freshly-cloned repo is the source of truth for
+  // everything after install — the bootstrap `config` only got us this far.
+  const effectiveConfig = await resolveClonedConfig(repoDir, config);
+  diag.log(
+    effectiveConfig === config
+      ? "session config: bootstrap (no committed config found in clone)"
+      : "session config: committed sidestage.config from clone",
+  );
+
   // 5. Secrets (referenced, never distributed) ------------------------------
-  const secrets = await ensureSecrets(config, ui, repoDir, diag);
+  const secrets = await ensureSecrets(effectiveConfig, ui, repoDir, diag);
   if (!secrets.ok) return secrets;
 
-  return ok({ repoDir });
+  return ok({ repoDir, config: effectiveConfig });
 }
 
 async function ensureSecrets(
