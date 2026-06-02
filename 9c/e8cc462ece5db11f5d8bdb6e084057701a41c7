@@ -1,0 +1,104 @@
+packages/core/src/secrets.ts
+  s_7dd7a2024305ea::t_502c9f00705213 4-87
+.gitignore
+  s_7dd7a2024305ea::t_502c9f00705213 6
+tsconfig.base.json
+  s_7dd7a2024305ea::t_502c9f00705213 18-20
+packages/cli/README.md
+  s_7dd7a2024305ea::t_502c9f00705213 1,20-171
+  s_7dd7a2024305ea::t_f0b97a59f9a42e 7-9
+packages/core/src/adapters/index.ts
+  s_7dd7a2024305ea::t_502c9f00705213 1
+packages/core/src/git.integration.test.ts
+  s_7dd7a2024305ea::t_502c9f00705213 5-60
+packages/cli/src/init.ts
+  s_7dd7a2024305ea::t_502c9f00705213 13-131
+packages/config/src/loader.test.ts
+  s_7dd7a2024305ea::t_502c9f00705213 13-35
+packages/core/src/system/runtime.ts
+  s_7dd7a2024305ea::t_502c9f00705213 4
+packages/cli/src/ui-clack.ts
+  s_7dd7a2024305ea::t_502c9f00705213 3
+packages/core/src/actions.ts
+  s_7dd7a2024305ea::t_502c9f00705213 4-12
+packages/core/src/dev-server.test.ts
+  s_7dd7a2024305ea::t_502c9f00705213 5
+packages/core/src/index.ts
+  s_7dd7a2024305ea::t_502c9f00705213 1-5
+packages/core/src/adapters/git-host.ts
+  s_7dd7a2024305ea::t_502c9f00705213 1
+packages/core/src/system/paths.ts
+  s_7dd7a2024305ea::t_502c9f00705213 4-15
+packages/config/src/schema.ts
+  s_7dd7a2024305ea::t_502c9f00705213 84-109
+packages/core/src/rails.ts
+  s_7dd7a2024305ea::t_502c9f00705213 1-33
+packages/core/src/system/toolchain.ts
+  s_7dd7a2024305ea::t_502c9f00705213 81
+packages/cli/src/banner.ts
+  s_7dd7a2024305ea::t_502c9f00705213 10
+README.md
+  s_7dd7a2024305ea::t_a21e9757ef6bad 7-9
+  s_7dd7a2024305ea::t_3cbb1a1a66741b 55-56,58,60,62
+  s_7dd7a2024305ea::t_502c9f00705213 1,20-54,57,59,61,66-171
+packages/core/src/system/open.ts
+  s_7dd7a2024305ea::t_502c9f00705213 4
+package.json
+  s_7dd7a2024305ea::t_502c9f00705213 2-6,11,18
+  s_7dd7a2024305ea::t_0291233c19e4da 7-10,12
+packages/cli/tsup.config.ts
+  s_7dd7a2024305ea::t_502c9f00705213 4-11
+packages/config/src/loader.ts
+  s_7dd7a2024305ea::t_502c9f00705213 7-53
+packages/core/src/agent.ts
+  s_7dd7a2024305ea::t_502c9f00705213 4-41
+packages/config/package.json
+  s_7dd7a2024305ea::t_502c9f00705213 2
+packages/cli/src/cli.ts
+  s_7dd7a2024305ea::t_502c9f00705213 6-77
+packages/core/package.json
+  s_7dd7a2024305ea::t_502c9f00705213 2-10
+packages/core/src/git.ts
+  s_7dd7a2024305ea::t_502c9f00705213 1-248
+packages/cli/package.json
+  s_7dd7a2024305ea::t_502c9f00705213 2,22,25,27,30-58
+  s_7dd7a2024305ea::t_4b80fc01b571a6 15-21,23-24,26,28
+examples/example.sidestage.config.ts
+  s_7dd7a2024305ea::t_502c9f00705213 1-60
+packages/core/src/onboarding.ts
+  s_7dd7a2024305ea::t_502c9f00705213 6-107
+packages/cli/src/index.ts
+  s_7dd7a2024305ea::t_502c9f00705213 1-13
+pnpm-lock.yaml
+  ai_agent 39-54
+packages/cli/src/session.ts
+  s_7dd7a2024305ea::t_502c9f00705213 4-410
+packages/core/src/launcher.ts
+  s_7dd7a2024305ea::t_502c9f00705213 5-91
+packages/core/src/agent.test.ts
+  s_7dd7a2024305ea::t_502c9f00705213 5-33
+packages/config/src/index.ts
+  s_7dd7a2024305ea::t_502c9f00705213 4-11
+examples/scripts/sidestage/make-path-public.mjs
+  s_7dd7a2024305ea::t_502c9f00705213 1-49
+packages/core/src/dev-server.ts
+  s_7dd7a2024305ea::t_502c9f00705213 5
+vitest.config.ts
+  s_7dd7a2024305ea::t_502c9f00705213 10-12
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.2",
+  "base_commit_sha": "9ce8cc462ece5db11f5d8bdb6e084057701a41c7",
+  "prompts": {},
+  "sessions": {
+    "s_7dd7a2024305ea": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "8f860ee5-ec28-4d74-84c5-21f586b7e81e",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": null
+    }
+  }
+}
