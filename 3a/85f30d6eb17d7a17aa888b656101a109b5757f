@@ -1,0 +1,34 @@
+packages/core/src/onboarding.ts
+  s_f6a1238540dfb3::t_e16604cbca97c3 117-125,127,130
+  s_f6a1238540dfb3::t_9da7083c746d0c 6
+  s_f6a1238540dfb3::t_c4221769b77fae 30-47
+packages/core/src/onboarding.test.ts
+  s_f6a1238540dfb3::t_8b7f7572622c92 1-60
+packages/cli/src/cli.ts
+  s_f6a1238540dfb3::t_57e17edd4658e2 70-71
+  s_f6a1238540dfb3::t_10539a2de8ee44 95
+packages/core/src/launcher.ts
+  s_f6a1238540dfb3::t_0b32950d19f477 84-86,90,92,94
+packages/cli/package.json
+  s_f6a1238540dfb3::t_ba978369fcbac7 3
+packages/cli/src/init.ts
+  s_f6a1238540dfb3::t_f2a119154ce400 8
+  s_f6a1238540dfb3::t_97219fbd3eee9f 36-40,42-47
+  s_f6a1238540dfb3::t_a20ddd4775ac60 68
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.2",
+  "base_commit_sha": "3a85f30d6eb17d7a17aa888b656101a109b5757f",
+  "prompts": {},
+  "sessions": {
+    "s_f6a1238540dfb3": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "27ed3d3b-9dce-47b0-a0ab-faf98a76d4fe",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "Brett Schneider <brett.c.schneider@gmail.com>"
+    }
+  }
+}
