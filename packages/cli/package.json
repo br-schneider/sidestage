@@ -1,0 +1,60 @@
+{
+  "name": "sidestage",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "A safe cockpit for non-engineers to change a real codebase and hand it to engineering.",
+  "keywords": [
+    "cli",
+    "design-mode",
+    "git",
+    "preview",
+    "pull-request",
+    "non-technical",
+    "cockpit"
+  ],
+  "author": {
+    "name": "Brett Schneider",
+    "url": "https://github.com/br-schneider"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/br-schneider/sidestage.git",
+    "directory": "packages/cli"
+  },
+  "homepage": "https://github.com/br-schneider/sidestage#readme",
+  "bugs": {
+    "url": "https://github.com/br-schneider/sidestage/issues"
+  },
+  "bin": {
+    "sidestage": "./dist/cli.js"
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "prepack": "tsup"
+  },
+  "dependencies": {
+    "@clack/prompts": "^0.11.0",
+    "picocolors": "^1.1.1"
+  },
+  "devDependencies": {
+    "@sidestage/config": "workspace:*",
+    "@sidestage/core": "workspace:*"
+  }
+}

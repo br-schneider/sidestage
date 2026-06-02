@@ -1,0 +1,7 @@
+packages:
+  - "packages/*"
+
+# esbuild needs its postinstall to fetch the platform binary that tsx, tsup and
+# vitest all depend on. Everything else stays sandboxed.
+allowBuilds:
+  esbuild: true

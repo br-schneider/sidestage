@@ -1,0 +1,35 @@
+{
+  "name": "sidestage-workspace",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Sidestage — a safe cockpit for non-engineers to change a real codebase and hand it to engineering.",
+  "license": "MIT",
+  "author": "Brett Schneider (https://github.com/br-schneider)",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/br-schneider/sidestage.git"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "packageManager": "pnpm@11.5.0",
+  "scripts": {
+    "sidestage": "tsx packages/cli/src/cli.ts",
+    "dev": "tsx packages/cli/src/cli.ts",
+    "check": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "build": "pnpm -C packages/cli build"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "prettier": "^3.4.2",
+    "tsup": "^8.3.5",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2",
+    "vitest": "^3.2.4"
+  }
+}
